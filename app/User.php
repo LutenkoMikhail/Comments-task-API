@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
+use Jenssegers\Date\Date;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'gender', 'birthday',
+        'email', 'password', 'api_token'
     ];
 
     /**
@@ -38,11 +40,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+
     public function generateToken()
     {
         $this->api_token = Str::random(60);
         $this->save();
-
         return $this->api_token;
     }
+
 }

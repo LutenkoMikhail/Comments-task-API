@@ -1,6 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
 use App\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -20,7 +21,10 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
-        'gender' => $faker->randomElement([Config::get('constants.user.user_gender _male'),Config::get('constants.user.user_gender _female')]),
+        'gender' => $faker->randomElement([
+            Config::get('constants.user.user_gender _male'),
+            Config::get('constants.user.user_gender _female')
+        ]),
         'birthday' => $faker->dateTimeBetween('-119 years', '-18 years')->format('Y-m-d'),
         'email' => $faker->unique()->freeEmail,
         'email_verified_at' => now(),

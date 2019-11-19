@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->collation = 'utf8_unicode_ci';
 
             $table->bigIncrements('id');
-            $table->string('first_name',50);
-            $table->string('last_name',50);
-            $table->string('gender',10);
+            $table->string('first_name', 50);
+            $table->string('last_name', 50);
+            $table->string('gender', 10);
             $table->date('birthday');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
