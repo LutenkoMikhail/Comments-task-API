@@ -20,5 +20,16 @@ use Jenssegers\Date\Date;
  */
 interface Post extends Printable
 {
+    public function getCreatedDate();
+    public function setCreatedDate(Date $created_at);
+
+    public function getText();
+    public function setText(string $text);
+
+    public function getViews();
+    public function setViews(int $views);
+
+    public function getComment();
+    public function setComment(array $Comment);
 
 }

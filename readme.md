@@ -135,3 +135,9 @@ php cli.php COMMAND     # Outputs method COMMAND of \Task\Models\CLI
 В качестве бонуса, можете реализовать следующее:
 - Создать юнит-тесты для классов проекта
 - Заверните приложение в контейнер docker
+
+https://developernotes.ru/laravel-5/rest-restful-api
+https://softobzor.com.ua/laravel-restful-api/
+https://softobzor.com.ua/laravel-restful-api-testirovanie/
+https://github.com/arsengoian/hr_test
+
